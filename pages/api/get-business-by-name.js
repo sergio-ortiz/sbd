@@ -14,6 +14,16 @@ export default async function handler(req, res) {
   if (result[0]) {
     res.status(400).json({ data: `${body.name} is not available` });
   } else {
-    res.status(200).json({ data: `${body.name} is available` });
+    const created = await prisma.business.create({
+      data: {
+        names: {
+          create: {
+            content: body.name,
+          },
+        },
+      },
+    });
+
+    res.status(200).json({ data: "success" });
   }
 }

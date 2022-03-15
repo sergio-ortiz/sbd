@@ -15,7 +15,7 @@ export default function CreateBusinessForm({ setState }) {
   return (
     <form onSubmit={(e) => handleSubmit(e, setState)}>
       <label htmlFor="name">Business Name:</label>
-      <input type="text" id="name" name="name" />
+      <input type="text" id="name" name="name" required />
       <button type="submit">Check</button>
     </form>
   );
