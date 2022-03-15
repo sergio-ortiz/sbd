@@ -5,7 +5,7 @@ export default function Home() {
   const [availability, setAvailability] = useState("availability?");
   return (
     <div>
-      <h1>Check name availability</h1>
+      <h1>Create Business Entry</h1>
       <CreateBusinessForm setState={setAvailability} />
       <p>{availability}</p>
     </div>
