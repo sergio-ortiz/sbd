@@ -1,4 +1,4 @@
-async function handleSubmit(e) {
+async function handleSubmit(e, setState) {
   e.preventDefault();
   const response = await fetch("./api/get-business-by-name", {
     method: "POST",
@@ -8,12 +8,12 @@ async function handleSubmit(e) {
   });
   const result = await response.json();
 
-  alert(result.data);
+  setState(result.data);
 }
 
-export default function CreateBusinessForm() {
+export default function CreateBusinessForm({ setState }) {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={(e) => handleSubmit(e, setState)}>
       <label htmlFor="name">Business Name:</label>
       <input type="text" id="name" name="name" />
       <button type="submit">Check</button>
