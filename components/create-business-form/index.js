@@ -1,3 +1,5 @@
+import styles from "./create-business-form.module.css";
+
 async function handleSubmit(e, setState) {
   e.preventDefault();
   const response = await fetch("./api/get-business-by-name", {
@@ -13,7 +15,10 @@ async function handleSubmit(e, setState) {
 
 export default function CreateBusinessForm({ setState }) {
   return (
-    <form onSubmit={(e) => handleSubmit(e, setState)}>
+    <form
+      className={styles["flex-container"]}
+      onSubmit={(e) => handleSubmit(e, setState)}
+    >
       <label htmlFor="name">Business: </label>
       <input type="text" id="name" name="name" placeholder="Name" required />
       <button type="submit">Create</button>
