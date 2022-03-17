@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   });
 
   if (results[0]) {
-    res.status(200).json({ data: `Do you mean ${body.name}?` });
+    res.redirect(`/dym/${body.name}`);
   } else {
     res.redirect("/api/create-business");
   }
