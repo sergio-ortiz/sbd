@@ -21,7 +21,9 @@ export default function CreateBusinessForm({ setState }) {
     >
       <label htmlFor="name">Business: </label>
       <input type="text" id="name" name="name" placeholder="Name" required />
-      <button type="submit">Create</button>
+      <button type="submit" className={styles.btn}>
+        Create
+      </button>
     </form>
   );
 }

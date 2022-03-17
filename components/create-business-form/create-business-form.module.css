@@ -4,3 +4,13 @@
   justify-content: space-between;
   height: 75px;
 }
+
+.btn {
+  background: seagreen;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.33rem;
+  margin-top: 0.25rem;
+  font-weight: bold;
+}
