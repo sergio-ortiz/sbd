@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-  const body = JSON.parse(req.body);
+  const body = req.body;
 
   await prisma.business.create({
     data: {
@@ -11,5 +11,5 @@ export default async function handler(req, res) {
     },
   });
 
-  res.status(200).json({ data: "Business added to directory." });
+  res.redirect("/success");
 }
