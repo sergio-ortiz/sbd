@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 export default function Sucess() {
   return (
     <Layout>
-      <h1>Business added to directory.</h1>
+      <h2>Business added to directory.</h2>
     </Layout>
   );
 }

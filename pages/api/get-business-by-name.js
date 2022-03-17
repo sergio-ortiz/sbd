@@ -11,9 +11,9 @@ export default async function handler(req, res) {
     },
   });
 
-  if (results[0]) {
-    res.redirect(`/dym/${body.name}`);
-  } else {
+  if (!results[0]) {
     res.redirect("/api/create-business");
+  } else {
+    res.redirect(`/dym/${body.name}`);
   }
 }

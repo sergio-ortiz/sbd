@@ -3,13 +3,32 @@
   position: fixed;
   top: 0;
   width: 100%;
+}
+
+.flex-container {
   height: 3rem;
+  max-width: 1080px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.branding {
+  color: white;
+  font-weight: lighter;
+  font-style: oblique;
 }
 
 .nav-links {
-  display: flex;
-  justify-content: space-evenly;
   list-style: none;
+  display: flex;
+}
+
+.nav-link-item {
+  padding: 1rem;
 }
 
 .nav-link-text {

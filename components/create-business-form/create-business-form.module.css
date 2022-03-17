@@ -3,14 +3,19 @@
   flex-direction: column;
   justify-content: space-between;
   height: 75px;
+  width: 350px;
 }
 
 .btn {
-  background: seagreen;
+  background: green;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 0.33rem;
   margin-top: 0.25rem;
   font-weight: bold;
+}
+
+.btn:hover {
+  background: seagreen;
 }
