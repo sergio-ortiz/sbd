@@ -14,7 +14,7 @@ datasource db {
 model Name {
   id         Int      @id @default(autoincrement())
   content    String
-  official   Boolean  @default(false)
+  official   Boolean  @default(true)
   business   Business @relation(fields: [businessId], references: [id])
   businessId Int
 }
