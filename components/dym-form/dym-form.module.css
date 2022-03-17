@@ -1,0 +1,30 @@
+.btn-group {
+  max-width: 300px;
+}
+.btn {
+  margin: 0 1.5rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0.33rem;
+  width: 75px;
+  cursor: pointer;
+}
+
+.yes-btn {
+  background: green;
+}
+
+.yes-btn:hover {
+  background: seagreen;
+}
+
+.no-btn {
+  background: #333;
+}
+
+.no-btn:hover {
+  background: #444;
+}

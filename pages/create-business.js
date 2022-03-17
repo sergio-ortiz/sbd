@@ -4,7 +4,7 @@ import CreateBusinessForm from "../components/create-business-form";
 export default function CreateBusiness() {
   return (
     <Layout>
-      <h1>Create Business Entry</h1>
+      <h2>Create Business Entry</h2>
       <CreateBusinessForm />
     </Layout>
   );
