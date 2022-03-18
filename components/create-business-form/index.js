@@ -8,7 +8,14 @@ export default function CreateBusinessForm() {
       method="post"
     >
       <label htmlFor="name">Business: </label>
-      <input type="text" id="name" name="name" placeholder="Name" required />
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Name"
+        className={styles["text-input"]}
+        required
+      />
       <button type="submit" className={styles.btn}>
         Create
       </button>

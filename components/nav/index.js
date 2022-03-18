@@ -7,7 +7,7 @@ export default function Nav() {
       <nav className={styles["flex-container"]}>
         <Link href="/">
           <a className={styles.branding}>
-            <h1>small Business Directory</h1>
+            <h1>sbd</h1>
           </a>
         </Link>
         <ul className={styles["nav-links"]}>

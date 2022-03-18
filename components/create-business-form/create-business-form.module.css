@@ -12,11 +12,18 @@
   border: none;
   border-radius: 5px;
   padding: 0.33rem;
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
   font-weight: bold;
+  font-size: 20px;
   cursor: pointer;
 }
 
 .btn:hover {
   background: seagreen;
+}
+
+.text-input {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.25rem;
+  font-size: 20px;
 }
