@@ -18,8 +18,8 @@
 
 .branding {
   color: white;
-  font-weight: lighter;
   font-style: oblique;
+  text-decoration: none;
 }
 
 .nav-links {

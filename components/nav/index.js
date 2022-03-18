@@ -5,7 +5,11 @@ export default function Nav() {
   return (
     <div className={styles.navbar}>
       <nav className={styles["flex-container"]}>
-        <h1 className={styles.branding}>small Business Directory</h1>
+        <Link href="/">
+          <a className={styles.branding}>
+            <h1>small Business Directory</h1>
+          </a>
+        </Link>
         <ul className={styles["nav-links"]}>
           <li className={styles["nav-link-item"]}>
             <Link href="/">
