@@ -7,12 +7,13 @@ export default function CreateBusinessForm() {
       action="/api/get-business-by-name"
       method="post"
     >
-      <label htmlFor="name">Business: </label>
+      <label htmlFor="name">Official Business Name</label>
+      <span>*As Registered IN IRS</span>
       <input
         type="text"
         id="name"
         name="name"
-        placeholder="Name"
+        placeholder="Official Name"
         className={styles["text-input"]}
         required
       />
