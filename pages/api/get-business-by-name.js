@@ -5,15 +5,13 @@ export default async function handler(req, res) {
 
   const results = await prisma.name.findMany({
     where: {
-      content: {
-        equals: body.name,
-      },
+      content: body.name[0],
     },
   });
 
   if (!results[0]) {
     res.redirect("/api/create-business");
   } else {
-    res.redirect(`/dym/${body.name}`);
+    res.redirect(`/dym/${results[0].content}`);
   }
 }

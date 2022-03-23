@@ -8,14 +8,25 @@ export default function CreateBusinessForm() {
       method="post"
     >
       <label htmlFor="name">Official Business Name</label>
-      <span>*As Registered IN IRS</span>
+      <span className={styles.asterisk}>*AS REGISTERED IN IRS</span>
       <input
         type="text"
-        id="name"
         name="name"
         placeholder="Official Name"
         className={styles["text-input"]}
         required
+      />
+      <input
+        type="text"
+        name="name"
+        placeholder="Alternate Name"
+        className={styles["text-input"]}
+      />
+      <input
+        type="text"
+        name="name"
+        placeholder="Alternate Name"
+        className={styles["text-input"]}
       />
       <button type="submit" className={styles.btn}>
         Create
