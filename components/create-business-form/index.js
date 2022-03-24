@@ -4,7 +4,7 @@ export default function CreateBusinessForm() {
   return (
     <form
       className={styles["flex-container"]}
-      action="/api/get-business-by-name"
+      action="/api/check-for-business"
       method="post"
     >
       <label htmlFor="name">Official Business Name</label>

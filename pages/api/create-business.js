@@ -1,8 +1,8 @@
-import decrypt from "../../utils/decrypt";
+import decipher from "../../utils/decipher";
 
 export default async function handler(req, res) {
-  const body = req.body.cipher
-    ? JSON.parse(decrypt(req.body.cipher))
+  const body = req.body.cipherText
+    ? await JSON.parse(decipher(req.body.cipherText))
     : req.body;
 
   const names = body.name.map((n, i) =>
