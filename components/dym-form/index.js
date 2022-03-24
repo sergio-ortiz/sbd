@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./dym-form.module.css";
 
-export default function DymForm({ name }) {
+export default function DymForm({ cipher }) {
   return (
     <form action="/api/create-business" method="post">
       <div className={styles["btn-group"]}>
@@ -14,8 +14,8 @@ export default function DymForm({ name }) {
         </Link>
         <button
           type="submit"
-          name="name"
-          value={name}
+          name="cipher"
+          value={cipher}
           className={`${styles.btn} ${styles["no-btn"]}`}
         >
           No

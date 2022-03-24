@@ -1,5 +1,11 @@
+import decrypt from "../../utils/decrypt";
+
 export default async function handler(req, res) {
-  const names = req.body.name.map((n, i) =>
+  const body = req.body.cipher
+    ? JSON.parse(decrypt(req.body.cipher))
+    : req.body;
+
+  const names = body.name.map((n, i) =>
     i ? { content: n } : { content: n, official: true }
   );
 

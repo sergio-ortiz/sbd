@@ -7,8 +7,8 @@ export default function DoYouMean() {
   const { name } = router.query;
   return (
     <Layout>
-      <h2>Do you mean {name}?</h2>
-      <DymForm name={name} />
+      <h2>Do you mean ...?</h2>
+      <DymForm cipher={name} />
     </Layout>
   );
 }
