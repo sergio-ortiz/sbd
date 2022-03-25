@@ -1,7 +1,7 @@
 .btn-group {
   display: flex;
-  justify-content: space-around;
-  max-width: 300px;
+  justify-content: space-evenly;
+  max-width: 375px;
 }
 .btn {
   color: white;

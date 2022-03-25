@@ -32,8 +32,8 @@ export default function results({ results, digest }) {
   console.log(results.map((e) => e.names[0]));
   return (
     <Layout>
-      <h3>Found existing business in directory.</h3>
-      <h3>Would you like to add it?</h3>
+      <h2>Found existing business in directory.</h2>
+      <h2>Would you like to add it?</h2>
       <AddBusinessForm cipherText={digest} />
     </Layout>
   );
