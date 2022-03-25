@@ -21,10 +21,15 @@ export async function getServerSideProps(context) {
           official: true,
         },
       },
+      year: true,
     },
   });
 
-  const businesses = results.map((obj) => obj.names[0]);
+  const businesses = results.map((obj) => ({
+    officialName: obj.names[0],
+    est: obj.year,
+  }));
+
   return {
     props: { businesses, digest },
   };
@@ -36,8 +41,8 @@ export default function results({ businesses, digest }) {
     <Layout>
       <h2>Found existing businesses in directory...</h2>
       <ul>
-        {businesses.map((name, i) => (
-          <li key={i}>{name.content}</li>
+        {businesses.map((biz, i) => (
+          <li key={i}>{`${biz.officialName.content}, est. ${biz.est}`}</li>
         ))}
       </ul>
       <h2>Would you like to add it?</h2>

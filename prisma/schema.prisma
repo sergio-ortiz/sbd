@@ -21,4 +21,5 @@ model Name {
 model Business {
   id    Int    @id @default(autoincrement())
   names Name[]
+  year  Int
 }

@@ -35,6 +35,14 @@ export default function CreateBusinessForm() {
           Add
         </button>
       </div>
+      <label htmlFor="year">Year Established</label>
+      <input
+        type="number"
+        name="year"
+        className={styles["text-input"]}
+        placeholder="e.g. 1990"
+        required
+      />
       <button type="submit" className={styles.btn}>
         Create
       </button>

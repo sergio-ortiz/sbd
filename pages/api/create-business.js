@@ -16,6 +16,7 @@ export default async function handler(req, res) {
       names: {
         create: names,
       },
+      year: parseInt(body.year),
     },
   });
 
