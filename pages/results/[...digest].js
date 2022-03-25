@@ -29,10 +29,11 @@ export async function getServerSideProps(context) {
 }
 
 export default function results({ results, digest }) {
-  console.log(results);
+  console.log(results.map((e) => e.names[0]));
   return (
     <Layout>
-      <h3>Found existing business in directory, would you like to add it?</h3>
+      <h3>Found existing business in directory.</h3>
+      <h3>Would you like to add it?</h3>
       <AddBusinessForm cipherText={digest} />
     </Layout>
   );
