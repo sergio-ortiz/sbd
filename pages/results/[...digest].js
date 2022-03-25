@@ -23,16 +23,23 @@ export async function getServerSideProps(context) {
       },
     },
   });
+
+  const businesses = results.map((obj) => obj.names[0]);
   return {
-    props: { results, digest },
+    props: { businesses, digest },
   };
 }
 
-export default function results({ results, digest }) {
-  console.log(results.map((e) => e.names[0]));
+export default function results({ businesses, digest }) {
+  businesses.forEach((obj) => console.dir(obj));
   return (
     <Layout>
-      <h2>Found existing business in directory.</h2>
+      <h2>Found existing businesses in directory...</h2>
+      <ul>
+        {businesses.map((name, i) => (
+          <li key={i}>{name.content}</li>
+        ))}
+      </ul>
       <h2>Would you like to add it?</h2>
       <AddBusinessForm cipherText={digest} />
     </Layout>
