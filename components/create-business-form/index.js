@@ -29,9 +29,12 @@ export default function CreateBusinessForm() {
       {altNameFields.map((e, i) => (
         <NameField key={i} />
       ))}
-      <button onClick={handleClick} className={styles["add-name"]}>
-        Add Alternate Name
-      </button>
+      <div className={styles["add-name-div"]}>
+        <span>Alternate Names?</span>
+        <button onClick={handleClick} className={styles["add-name"]}>
+          Add
+        </button>
+      </div>
       <button type="submit" className={styles.btn}>
         Create
       </button>

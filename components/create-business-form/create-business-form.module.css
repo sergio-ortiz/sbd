@@ -41,9 +41,19 @@
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 0.33rem;
+  padding: 0.33rem 0.66rem;
   margin-bottom: 0.5rem;
   font-weight: bold;
   font-size: 20px;
   cursor: pointer;
+}
+
+.add-name:hover {
+  background: #444;
+}
+
+.add-name-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
