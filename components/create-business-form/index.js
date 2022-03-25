@@ -1,6 +1,16 @@
+import { useState } from "react";
+import NameField from "../name-field";
 import styles from "./create-business-form.module.css";
 
 export default function CreateBusinessForm() {
+  const [state, setState] = useState(0);
+  const altNameFields = Array(state).fill();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setState(state + 1);
+  };
+
   return (
     <form
       className={styles["flex-container"]}
@@ -16,18 +26,12 @@ export default function CreateBusinessForm() {
         className={styles["text-input"]}
         required
       />
-      <input
-        type="text"
-        name="name"
-        placeholder="Alternate Name"
-        className={styles["text-input"]}
-      />
-      <input
-        type="text"
-        name="name"
-        placeholder="Alternate Name"
-        className={styles["text-input"]}
-      />
+      {altNameFields.map((e, i) => (
+        <NameField key={i} />
+      ))}
+      <button onClick={handleClick} className={styles["add-name"]}>
+        Add Alternate Name
+      </button>
       <button type="submit" className={styles.btn}>
         Create
       </button>

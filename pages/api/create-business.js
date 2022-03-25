@@ -5,9 +5,11 @@ export default async function handler(req, res) {
     ? await JSON.parse(decipher(req.body.cipherText))
     : req.body;
 
-  const names = body.name.map((n, i) =>
-    i ? { content: n } : { content: n, official: true }
-  );
+  const names = Array.isArray(body.name)
+    ? body.name.map((n, i) =>
+        i ? { content: n } : { content: n, official: true }
+      )
+    : { content: body.name, official: true };
 
   await prisma.business.create({
     data: {
