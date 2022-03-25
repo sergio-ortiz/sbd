@@ -4,7 +4,7 @@ import cipher from "../../utils/cipher";
 export default async function handler(req, res) {
   const results = await prisma.name.findMany({
     where: {
-      content: req.body.name[0],
+      content: { in: req.body.name },
     },
   });
 

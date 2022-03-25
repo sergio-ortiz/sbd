@@ -1,11 +1,10 @@
 import decipher from "../../utils/decipher";
 import prisma from "../../lib/prisma";
-import { useRouter } from "next/router";
 import Layout from "../../components/layout";
 import AddBusinessForm from "../../components/add-business-form";
 
 export async function getServerSideProps(context) {
-  const digest = context.query.digest;
+  const digest = context.query.digest.join("/");
   const json = decipher(digest);
   const parsed = JSON.parse(json);
   const results = await prisma.business.findMany({
@@ -16,7 +15,7 @@ export async function getServerSideProps(context) {
         },
       },
     },
-    include: {
+    select: {
       names: {
         where: {
           official: true,
@@ -24,15 +23,12 @@ export async function getServerSideProps(context) {
       },
     },
   });
-
   return {
-    props: { results },
+    props: { results, digest },
   };
 }
 
-export default function results({ results }) {
-  const router = useRouter();
-  const { digest } = router.query;
+export default function results({ results, digest }) {
   console.log(results);
   return (
     <Layout>
