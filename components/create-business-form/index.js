@@ -44,6 +44,35 @@ export default function CreateBusinessForm() {
         placeholder="e.g. 1990"
         required
       />
+      <label>Address</label>
+      <input
+        type="text"
+        name="street"
+        className={styles["text-input"]}
+        placeholder="Street"
+        required
+      />
+      <input
+        type="text"
+        name="city"
+        className={styles["text-input"]}
+        placeholder="City"
+        required
+      />
+      <input
+        type="text"
+        name="county"
+        className={styles["text-input"]}
+        placeholder="County"
+        required
+      />
+      <input
+        type="text"
+        name="state"
+        className={styles["text-input"]}
+        placeholder="State"
+        required
+      />
       <label htmlFor="industry">Select Your Industry</label>
       <select name="industry" className={styles["text-input"]} required>
         <option value="">--Please choose an option--</option>

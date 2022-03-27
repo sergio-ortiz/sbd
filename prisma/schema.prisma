@@ -19,8 +19,9 @@ model Name {
 }
 
 model Business {
-  id       Int    @id @default(autoincrement())
-  names    Name[]
-  year     Int
-  industry String
+  id               Int    @id @default(autoincrement())
+  names            Name[]
+  year             Int
+  principalAddress String
+  industry         String
 }
