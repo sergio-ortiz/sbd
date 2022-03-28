@@ -1,20 +1,17 @@
 import { useState } from "react";
 import NameField from "../name-field";
+import AddressFields from "../../components/address-fields";
 import styles from "./create-business-form.module.css";
 
 export default function CreateBusinessForm() {
-  const [bool, setBool] = useState(false);
   const [nameCount, setNameCount] = useState(0);
+  const [diffMailAddress, setDiffMailAddress] = useState(false);
+
   const altNameFields = Array(nameCount).fill();
 
   const addNameField = (e) => {
     e.preventDefault();
     setNameCount(nameCount + 1);
-  };
-
-  const useDiffMailAddress = (e) => {
-    e.preventDefault();
-    setBool(!bool);
   };
 
   return (
@@ -49,41 +46,16 @@ export default function CreateBusinessForm() {
         placeholder="e.g. 1990"
         required
       />
-      <label>Address</label>
-      <input
-        type="text"
-        name="street"
-        className={styles.input}
-        placeholder="Street"
-        required
-      />
-      <input
-        type="text"
-        name="city"
-        className={styles.input}
-        placeholder="City"
-        required
-      />
-      <input
-        type="text"
-        name="county"
-        className={styles.input}
-        placeholder="County"
-        required
-      />
-      <input
-        type="text"
-        name="state"
-        className={styles.input}
-        placeholder="State"
-        required
-      />
+      <AddressFields />
       <div className={styles["add-name-div"]}>
-        <span>Use a different mailing address?</span>
-        <button onClick={useDiffMailAddress} className={styles["add-name"]}>
-          {bool ? "No" : "Yes"}
-        </button>
+        <label>Use Different Mailing Address?</label>
+        <input
+          type="checkbox"
+          onClick={() => setDiffMailAddress(!diffMailAddress)}
+        />
       </div>
+      <hr />
+      {diffMailAddress ? <AddressFields /> : ""}
       <hr />
       <label htmlFor="industry">Select Your Industry</label>
       <select name="industry" className={styles.input} required>

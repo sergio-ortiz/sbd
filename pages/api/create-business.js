@@ -17,7 +17,7 @@ export default async function handler(req, res) {
         create: names,
       },
       year: parseInt(body.year),
-      principalAddress: `${body.street} ${body.city}, ${body.county} County, ${body.state}`,
+      principalAddress: body.address,
       industry: body.industry,
     },
   });
