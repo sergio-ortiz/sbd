@@ -18,16 +18,15 @@ export default function CreateBusinessForm() {
       method="post"
     >
       <label htmlFor="name">Official Business Name</label>
-      <span className={styles.asterisk}>*AS REGISTERED IN IRS</span>
       <input
         type="text"
         name="name"
-        placeholder="Official Name"
-        className={styles["text-input"]}
+        placeholder="**AS REGISTERED IN IRS**"
+        className={styles.input}
         required
       />
       {altNameFields.map((e, i) => (
-        <NameField key={i} />
+        <NameField key={i} className={styles.input} />
       ))}
       <div className={styles["add-name-div"]}>
         <span>Alternate Names?</span>
@@ -40,7 +39,7 @@ export default function CreateBusinessForm() {
       <input
         type="number"
         name="year"
-        className={styles["text-input"]}
+        className={styles.input}
         placeholder="e.g. 1990"
         required
       />
@@ -48,33 +47,33 @@ export default function CreateBusinessForm() {
       <input
         type="text"
         name="street"
-        className={styles["text-input"]}
+        className={styles.input}
         placeholder="Street"
         required
       />
       <input
         type="text"
         name="city"
-        className={styles["text-input"]}
+        className={styles.input}
         placeholder="City"
         required
       />
       <input
         type="text"
         name="county"
-        className={styles["text-input"]}
+        className={styles.input}
         placeholder="County"
         required
       />
       <input
         type="text"
         name="state"
-        className={styles["text-input"]}
+        className={styles.input}
         placeholder="State"
         required
       />
       <label htmlFor="industry">Select Your Industry</label>
-      <select name="industry" className={styles["text-input"]} required>
+      <select name="industry" className={styles.input} required>
         <option value="">--Please choose an option--</option>
         <option value="Construction/Trade">Construction/Trade</option>
         <option value="Healthcare">Healthcare</option>
