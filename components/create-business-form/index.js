@@ -3,12 +3,18 @@ import NameField from "../name-field";
 import styles from "./create-business-form.module.css";
 
 export default function CreateBusinessForm() {
-  const [state, setState] = useState(0);
-  const altNameFields = Array(state).fill();
+  const [bool, setBool] = useState(false);
+  const [nameCount, setNameCount] = useState(0);
+  const altNameFields = Array(nameCount).fill();
 
-  const handleClick = (e) => {
+  const addNameField = (e) => {
     e.preventDefault();
-    setState(state + 1);
+    setNameCount(nameCount + 1);
+  };
+
+  const useDiffMailAddress = (e) => {
+    e.preventDefault();
+    setBool(!bool);
   };
 
   return (
@@ -30,7 +36,7 @@ export default function CreateBusinessForm() {
       ))}
       <div className={styles["add-name-div"]}>
         <span>Alternate Names?</span>
-        <button onClick={handleClick} className={styles["add-name"]}>
+        <button onClick={addNameField} className={styles["add-name"]}>
           Add
         </button>
       </div>
@@ -72,6 +78,13 @@ export default function CreateBusinessForm() {
         placeholder="State"
         required
       />
+      <div className={styles["add-name-div"]}>
+        <span>Use a different mailing address?</span>
+        <button onClick={useDiffMailAddress} className={styles["add-name"]}>
+          {bool ? "No" : "Yes"}
+        </button>
+      </div>
+      <hr />
       <label htmlFor="industry">Select Your Industry</label>
       <select name="industry" className={styles.input} required>
         <option value="">--Please choose an option--</option>
