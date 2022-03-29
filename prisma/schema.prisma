@@ -21,6 +21,7 @@ model Name {
 model Business {
   id               Int    @id @default(autoincrement())
   names            Name[]
+  tin              Int?
   year             Int
   principalAddress String
   mailingAddress   String

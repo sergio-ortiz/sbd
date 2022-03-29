@@ -20,6 +20,7 @@ export default async function handler(req, res) {
       names: {
         create: names,
       },
+      tin: parseInt(body.tin),
       year: parseInt(body.year),
       principalAddress: address,
       mailingAddress: mailAddress,
@@ -27,6 +28,8 @@ export default async function handler(req, res) {
       naicsCode: parseInt(body.naics),
     },
   });
+
+  console.log(body);
 
   res.redirect("/success");
 }

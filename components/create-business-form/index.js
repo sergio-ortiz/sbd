@@ -37,6 +37,13 @@ export default function CreateBusinessForm() {
           Add
         </button>
       </div>
+      <label htmlFor="tin">TIN#</label>
+      <input
+        type="number"
+        name="tin"
+        className={styles.input}
+        placeholder="Tax ID Number"
+      />
       <hr />
       <label htmlFor="year">Year Established</label>
       <input
@@ -73,6 +80,7 @@ export default function CreateBusinessForm() {
         <option value="Restaurant/Retail">Restaurant/Retail</option>
         <option value="Other">Other</option>
       </select>
+      <hr />
       <label htmlFor="naics">NAICS Code</label>
       <input
         type="number"
@@ -80,6 +88,7 @@ export default function CreateBusinessForm() {
         className={styles.input}
         min="100000"
         max="999999"
+        placeholder="NAICS Code"
       />
       <button type="submit" className={styles.btn}>
         Create
