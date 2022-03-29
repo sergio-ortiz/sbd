@@ -73,6 +73,14 @@ export default function CreateBusinessForm() {
         <option value="Restaurant/Retail">Restaurant/Retail</option>
         <option value="Other">Other</option>
       </select>
+      <label htmlFor="naics">NAICS Code</label>
+      <input
+        type="number"
+        name="naics"
+        className={styles.input}
+        min="100000"
+        max="999999"
+      />
       <button type="submit" className={styles.btn}>
         Create
       </button>

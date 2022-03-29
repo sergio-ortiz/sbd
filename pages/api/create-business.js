@@ -24,6 +24,7 @@ export default async function handler(req, res) {
       principalAddress: address,
       mailingAddress: mailAddress,
       industry: body.industry,
+      naicsCode: parseInt(body.naics),
     },
   });
 

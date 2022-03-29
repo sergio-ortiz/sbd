@@ -25,4 +25,5 @@ model Business {
   principalAddress String
   mailingAddress   String
   industry         String
+  naicsCode        Int?
 }
