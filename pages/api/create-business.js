@@ -24,6 +24,7 @@ export default async function handler(req, res) {
       year: parseInt(body.year),
       principalAddress: address,
       mailingAddress: mailAddress,
+      type: body.type || null,
       employees: parseInt(body.employees) || null,
       revenue: parseInt(body.revenue) || null,
       industry: body.industry,

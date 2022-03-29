@@ -19,12 +19,13 @@ model Name {
 }
 
 model Business {
-  id               Int    @id @default(autoincrement())
+  id               Int     @id @default(autoincrement())
   names            Name[]
   tin              Int?
   year             Int
   principalAddress String
   mailingAddress   String
+  type             String?
   employees        Int?
   revenue          Int?
   industry         String
