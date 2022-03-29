@@ -20,12 +20,12 @@ export default async function handler(req, res) {
       names: {
         create: names,
       },
-      tin: parseInt(body.tin),
+      tin: parseInt(body.tin) || null,
       year: parseInt(body.year),
       principalAddress: address,
       mailingAddress: mailAddress,
       industry: body.industry,
-      naicsCode: parseInt(body.naics),
+      naicsCode: parseInt(body.naics) || null,
     },
   });
 
