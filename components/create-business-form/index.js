@@ -63,6 +63,13 @@ export default function CreateBusinessForm() {
       </div>
       <hr />
       {diffMailAddress ? <AddressFields /> : ""}
+      <label htmlFor="employees">Number Of Employees "Present"</label>
+      <input
+        type="number"
+        name="employees"
+        className={styles.input}
+        placeholder="Employees"
+      />
       <label htmlFor="revenue">AVG Rev Last 3 Years</label>
       <input
         type="number"

@@ -25,6 +25,7 @@ model Business {
   year             Int
   principalAddress String
   mailingAddress   String
+  employees        Int?
   revenue          Int?
   industry         String
   naicsCode        Int?
