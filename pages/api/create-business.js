@@ -11,13 +11,18 @@ export default async function handler(req, res) {
       )
     : { content: body.name, official: true };
 
+  const [address, mailAddress] = Array.isArray(body.address)
+    ? body.address
+    : [body.address, body.address];
+
   await prisma.business.create({
     data: {
       names: {
         create: names,
       },
       year: parseInt(body.year),
-      principalAddress: body.address,
+      principalAddress: address,
+      mailingAddress: mailAddress,
       industry: body.industry,
     },
   });

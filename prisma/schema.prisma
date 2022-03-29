@@ -23,5 +23,6 @@ model Business {
   names            Name[]
   year             Int
   principalAddress String
+  mailingAddress   String
   industry         String
 }
