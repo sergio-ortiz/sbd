@@ -19,15 +19,18 @@ model Name {
 }
 
 model Business {
-  id               Int     @id @default(autoincrement())
-  names            Name[]
-  tin              Int?
-  year             Int
-  principalAddress String
-  mailingAddress   String
-  type             String?
-  employees        Int?
-  revenue          Int?
-  industry         String
-  naicsCode        Int?
+  id                Int     @id @default(autoincrement())
+  names             Name[]
+  tin               Int?
+  womanOwned        Boolean @default(false)
+  veteranOwned      Boolean @default(false)
+  minorityCertified Boolean @default(false)
+  year              Int
+  principalAddress  String
+  mailingAddress    String
+  type              String?
+  employees         Int?
+  revenue           Int?
+  industry          String
+  naicsCode         Int?
 }

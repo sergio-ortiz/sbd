@@ -44,6 +44,24 @@ export default function CreateBusinessForm() {
         className={styles.input}
         placeholder="Tax ID Number"
       />
+      <fieldset className={styles["no-box"]}>
+        <legend className={styles.legend}>
+          Minority/Disadvantage: check all that apply
+        </legend>
+        <hr />
+        <div className={styles["add-name-div"]}>
+          <label htmlFor="woman">Woman Owned</label>
+          <input id="woman" name="womanOwned" type="checkbox" />
+        </div>
+        <div className={styles["add-name-div"]}>
+          <label htmlFor="veteran">Veteran Owned</label>
+          <input id="veteran" name="veteranOwned" type="checkbox" />
+        </div>
+        <div className={styles["add-name-div"]}>
+          <label htmlFor="minority">Minority Certified</label>
+          <input id="minority" name="minorityCertified" type="checkbox" />
+        </div>
+      </fieldset>
       <hr />
       <label htmlFor="year">Year Established</label>
       <input
@@ -53,10 +71,14 @@ export default function CreateBusinessForm() {
         placeholder="e.g. 1990"
         required
       />
+
       <AddressFields />
       <div className={styles["add-name-div"]}>
-        <label>Use Different Mailing Address?</label>
+        <label htmlFor="diffAddressCheckbox">
+          Use Different Mailing Address?
+        </label>
         <input
+          id="diffAddressCheckbox"
           type="checkbox"
           onClick={() => setDiffMailAddress(!diffMailAddress)}
         />
@@ -73,7 +95,7 @@ export default function CreateBusinessForm() {
         <option value="Sole Proprietor/Partnership">
           Sole Proprietor/Partnersip
         </option>
-        <option value="franchise">Franchise</option>
+        <option value="Franchise">Franchise</option>
       </select>
       <hr />
       <label htmlFor="employees">Number Of Employees "Present"</label>
