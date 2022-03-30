@@ -37,6 +37,20 @@ export default function CreateBusinessForm() {
           Add
         </button>
       </div>
+
+      <AddressFields />
+      <div className={styles["add-name-div"]}>
+        <label htmlFor="diffAddressCheckbox">
+          Use Different Mailing Address?
+        </label>
+        <input
+          id="diffAddressCheckbox"
+          type="checkbox"
+          onClick={() => setDiffMailAddress(!diffMailAddress)}
+        />
+      </div>
+      <hr />
+      {diffMailAddress ? <AddressFields /> : ""}
       <label htmlFor="tin">TIN#</label>
       <input
         type="number"
@@ -44,6 +58,7 @@ export default function CreateBusinessForm() {
         className={styles.input}
         placeholder="Tax ID Number"
       />
+      <hr />
       <fieldset className={styles["no-box"]}>
         <legend className={styles.legend}>
           Minority/Disadvantage: check all that apply
@@ -71,20 +86,6 @@ export default function CreateBusinessForm() {
         placeholder="e.g. 1990"
         required
       />
-
-      <AddressFields />
-      <div className={styles["add-name-div"]}>
-        <label htmlFor="diffAddressCheckbox">
-          Use Different Mailing Address?
-        </label>
-        <input
-          id="diffAddressCheckbox"
-          type="checkbox"
-          onClick={() => setDiffMailAddress(!diffMailAddress)}
-        />
-      </div>
-      <hr />
-      {diffMailAddress ? <AddressFields /> : ""}
       <label htmlFor="type">Type Of Business</label>
       <select name="type" className={styles.input}>
         <option value="">--Please choose an option--</option>
