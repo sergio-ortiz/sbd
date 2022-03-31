@@ -39,7 +39,7 @@ export default function results({ businesses, digest }) {
   businesses.forEach((obj) => console.dir(obj));
   return (
     <Layout>
-      <h2>Found existing businesses in directory...</h2>
+      <h2>Found existing businesses in directory &#x1F4C1;</h2>
       <ul>
         {businesses.map((biz, i) => (
           <li key={i}>{`${biz.officialName.content}, est. ${biz.est}`}</li>

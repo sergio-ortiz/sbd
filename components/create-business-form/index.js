@@ -100,7 +100,7 @@ export default function CreateBusinessForm() {
       <hr />
       <fieldset className={styles["no-box"]}>
         <legend className={styles.legend}>
-          Minority/Disadvantage: check all that apply
+          SB/Disadvantaged: check all that apply
         </legend>
         <hr />
         <div className={styles["add-name-div"]}>
