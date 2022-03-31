@@ -21,13 +21,19 @@ model Name {
 model Business {
   id                Int     @id @default(autoincrement())
   names             Name[]
+  principalAddress  String
+  mailingAddress    String
+  ceo               String?
+  ceoPhone          String?
+  ceoEmail          String?
+  otherPoc          String?
+  otherPocPhone     String?
+  otherPocEmail     String?
   tin               Int?
   womanOwned        Boolean @default(false)
   veteranOwned      Boolean @default(false)
   minorityCertified Boolean @default(false)
   year              Int
-  principalAddress  String
-  mailingAddress    String
   type              String?
   employees         Int?
   revenue           Int?

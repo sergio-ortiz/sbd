@@ -39,6 +39,7 @@ export default function CreateBusinessForm() {
       </div>
 
       <AddressFields />
+      {diffMailAddress ? <AddressFields /> : ""}
       <div className={styles["add-name-div"]}>
         <label htmlFor="diffAddressCheckbox">
           Use Different Mailing Address?
@@ -50,7 +51,45 @@ export default function CreateBusinessForm() {
         />
       </div>
       <hr />
-      {diffMailAddress ? <AddressFields /> : ""}
+      <label>CEO</label>
+      <input
+        type="text"
+        name="poc"
+        className={styles.input}
+        placeholder="Name"
+      />
+      <input
+        type="tel"
+        name="phone"
+        className={styles.input}
+        placeholder="Phone"
+      />
+      <input
+        type="email"
+        name="email"
+        className={styles.input}
+        placeholder="Email"
+      />
+      <label>Other POC</label>
+      <input
+        type="text"
+        name="poc"
+        className={styles.input}
+        placeholder="Name"
+      />
+      <input
+        type="tel"
+        name="phone"
+        className={styles.input}
+        placeholder="Phone"
+      />
+      <input
+        type="email"
+        name="email"
+        className={styles.input}
+        placeholder="Email"
+      />
+      <hr />
       <label htmlFor="tin">TIN#</label>
       <input
         type="number"
