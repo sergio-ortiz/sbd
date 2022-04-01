@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./address-fields.module.css";
+import { input } from "./address-fields.module.css";
 
 export default () => {
   const [street, setStreet] = useState("");
@@ -12,28 +12,28 @@ export default () => {
       <label>Address</label>
       <input
         type="text"
-        className={styles.input}
+        className={input}
         placeholder="Street"
         required
         onInput={(e) => setStreet(e.target.value)}
       />
       <input
         type="text"
-        className={styles.input}
+        className={input}
         placeholder="City"
         required
         onInput={(e) => setCity(e.target.value)}
       />
       <input
         type="text"
-        className={styles.input}
+        className={input}
         placeholder="County"
         required
         onInput={(e) => setCounty(e.target.value)}
       />
       <input
         type="text"
-        className={styles.input}
+        className={input}
         placeholder="State"
         required
         onInput={(e) => setState(e.target.value)}
