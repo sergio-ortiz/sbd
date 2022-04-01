@@ -1,4 +1,4 @@
-.flex-container {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -34,7 +34,7 @@
   background: white;
 }
 
-.add-name {
+.add {
   background: #333;
   color: white;
   border: none;
@@ -46,21 +46,12 @@
   cursor: pointer;
 }
 
-.add-name:hover {
+.add:hover {
   background: #444;
 }
 
-.add-name-div {
+.row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.no-box {
-  border: none;
-  padding: 0;
-}
-
-.legend {
-  padding: 0;
 }

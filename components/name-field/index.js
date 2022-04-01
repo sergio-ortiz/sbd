@@ -1,10 +1,10 @@
-export default function NameField({ className }) {
-  return (
-    <input
-      type="text"
-      name="name"
-      placeholder="Alternate Name"
-      className={className}
-    />
-  );
-}
+import { input } from "./name-field.module.css";
+
+export default () => (
+  <input
+    type="text"
+    name="name"
+    placeholder="Alternate Name"
+    className={input}
+  />
+);

@@ -1,14 +1,14 @@
 import { useState } from "react";
 import styles from "./address-fields.module.css";
 
-export default function AddressFields() {
+export default () => {
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
   const [county, setCounty] = useState("");
   const [state, setState] = useState("");
 
   return (
-    <div className={styles["flex-container"]}>
+    <>
       <label>Address</label>
       <input
         type="text"
@@ -45,6 +45,6 @@ export default function AddressFields() {
         readOnly
         hidden
       />
-    </div>
+    </>
   );
-}
+};

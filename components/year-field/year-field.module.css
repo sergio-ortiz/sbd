@@ -1,0 +1,10 @@
+.input {
+  margin: 0.4rem 0;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.33rem;
+  font-size: 20px;
+  border-radius: 7px 7px 0 0;
+  border: none;
+  border-bottom: 3px solid #ccc;
+  background: white;
+}
