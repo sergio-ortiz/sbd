@@ -1,6 +1,6 @@
 import { input } from "./name-field.module.css";
 
-export default () => (
+const NameField = () => (
   <input
     type="text"
     name="name"
@@ -8,3 +8,5 @@ export default () => (
     className={input}
   />
 );
+
+export default NameField;

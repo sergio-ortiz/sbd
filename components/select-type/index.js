@@ -1,11 +1,11 @@
 import { input } from "./select-type.module.css";
 
-export default () => (
+const SelectType = () => (
   <>
     <label htmlFor="type">Type Of Business</label>
     <select name="type" className={input}>
       <option value="">--Please choose an option--</option>
-      <option value="C corp">Corporation "C corp"</option>
+      <option value="C corp">Corporation &quot;C corp&quot;</option>
       <option value="Non-Profit">Non-Profit</option>
       <option value="LLC">LLC</option>
       <option value="S corp">S corp</option>
@@ -16,3 +16,5 @@ export default () => (
     </select>
   </>
 );
+
+export default SelectType;

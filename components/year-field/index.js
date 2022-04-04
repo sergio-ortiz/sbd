@@ -1,6 +1,6 @@
 import { input } from "./year-field.module.css";
 
-export default () => (
+const YearField = () => (
   <>
     <label htmlFor="year">Year Established</label>
     <input
@@ -12,3 +12,5 @@ export default () => (
     />
   </>
 );
+
+export default YearField;

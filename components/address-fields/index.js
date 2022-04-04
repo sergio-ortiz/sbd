@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { input } from "./address-fields.module.css";
 
-export default () => {
+const AddressFields = () => {
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
   const [county, setCounty] = useState("");
@@ -48,3 +48,5 @@ export default () => {
     </>
   );
 };
+
+export default AddressFields;

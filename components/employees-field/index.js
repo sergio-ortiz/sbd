@@ -1,8 +1,8 @@
 import { input } from "./employees-field.module.css";
 
-export default () => (
+const EmployeesField = () => (
   <>
-    <label htmlFor="employees">Number Of Employees "Present"</label>
+    <label htmlFor="employees">Number Of Employees &quot;Present&quot;</label>
     <input
       type="number"
       name="employees"
@@ -11,3 +11,5 @@ export default () => (
     />
   </>
 );
+
+export default EmployeesField;

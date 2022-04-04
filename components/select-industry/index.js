@@ -1,6 +1,6 @@
 import { input } from "./select-industry.module.css";
 
-export default () => (
+const SelectIndustry = () => (
   <>
     <label htmlFor="industry">Select Your Industry</label>
     <select name="industry" className={input} required>
@@ -20,3 +20,5 @@ export default () => (
     </select>
   </>
 );
+
+export default SelectIndustry;

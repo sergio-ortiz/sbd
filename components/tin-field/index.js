@@ -1,6 +1,6 @@
 import { input } from "./tin-field.module.css";
 
-export default () => (
+const TinField = () => (
   <>
     <label htmlFor="tin">TIN#</label>
     <input
@@ -11,3 +11,5 @@ export default () => (
     />
   </>
 );
+
+export default TinField;

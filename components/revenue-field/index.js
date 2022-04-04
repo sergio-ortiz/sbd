@@ -1,6 +1,6 @@
 import { input } from "./revenue-field.module.css";
 
-export default () => (
+const RevenueField = () => (
   <>
     <label htmlFor="revenue">AVG Rev Last 3 Years</label>
     <input
@@ -11,3 +11,5 @@ export default () => (
     />
   </>
 );
+
+export default RevenueField;

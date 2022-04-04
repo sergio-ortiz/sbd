@@ -1,6 +1,6 @@
 import { input } from "./naics-field.module.css";
 
-export default () => (
+const NaicsField = () => (
   <>
     <label htmlFor="naics">NAICS Code</label>
     <input
@@ -13,3 +13,5 @@ export default () => (
     />
   </>
 );
+
+export default NaicsField;

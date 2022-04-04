@@ -1,6 +1,6 @@
 import { input } from "./poc-fields.module.css";
 
-export default ({ label }) => (
+const PocFields = ({ label }) => (
   <>
     <label>{label}</label>
     <input type="text" name="poc" className={input} placeholder="Name" />
@@ -8,3 +8,5 @@ export default ({ label }) => (
     <input type="email" name="email" className={input} placeholder="Email" />
   </>
 );
+
+export default PocFields;

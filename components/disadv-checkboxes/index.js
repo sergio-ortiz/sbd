@@ -1,6 +1,6 @@
 import { noBox, legend, row } from "./disadv-checkboxes.module.css";
 
-export default () => (
+const DisadvCheckboxes = () => (
   <fieldset className={noBox}>
     <legend className={legend}>SB/Disadvantaged: check all that apply</legend>
     <hr />
@@ -18,3 +18,5 @@ export default () => (
     </div>
   </fieldset>
 );
+
+export default DisadvCheckboxes;
