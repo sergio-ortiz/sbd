@@ -61,5 +61,5 @@ export default async function handler(req, res) {
 
   console.log(body);
 
-  res.redirect(307, "/success");
+  res.redirect("/success");
 }
