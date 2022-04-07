@@ -33,7 +33,7 @@ export default async function handler(req, res) {
     email: [ceo.email, other.email],
   } = body);
 
-  await prisma.business.create({
+  const results = await prisma.business.create({
     data: {
       names: {
         create: names,
@@ -59,7 +59,5 @@ export default async function handler(req, res) {
     },
   });
 
-  console.log(body);
-
-  res.redirect("/success");
+  if (results) res.redirect("/success");
 }
