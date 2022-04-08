@@ -3,7 +3,7 @@ import Nav from "../nav";
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className={styles.page}>
       <Nav />
       <div className={styles.container}>{children}</div>
     </div>
