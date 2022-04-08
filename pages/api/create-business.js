@@ -1,8 +1,8 @@
-//import decipher from "../../utils/decipher";
-//import prisma from "../../lib/prisma";
+import decipher from "../../utils/decipher";
+import prisma from "../../lib/prisma";
 
 export default async function handler(req, res) {
-  /*   const body = req.body.cipherText
+  const body = req.body.cipherText
     ? await JSON.parse(decipher(req.body.cipherText))
     : req.body;
 
@@ -59,6 +59,5 @@ export default async function handler(req, res) {
     },
   });
 
-  if (results) res.redirect("/success"); */
   res.redirect(302, "/success");
 }
