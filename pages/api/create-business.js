@@ -60,5 +60,5 @@ export default async function handler(req, res) {
   });
 
   if (results) res.redirect("/success"); */
-  res.json({ redirect: "/success" });
+  res.redirect("/");
 }
