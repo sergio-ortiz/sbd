@@ -59,5 +59,7 @@ export default async function handler(req, res) {
     },
   });
 
+  console.log(results.id);
+
   res.redirect(302, `/success/${results.id}`);
 }
