@@ -1,15 +1,15 @@
 import { useState } from "react";
 import NameField from "../name-field";
 import AddressFields from "../../components/address-fields";
-import PocFields from "../poc-fields";
-import TinField from "../tin-field";
-import DisadvCheckboxes from "../disadv-checkboxes";
+//import PocFields from "../poc-fields";
+//import TinField from "../tin-field";
+//import DisadvCheckboxes from "../disadv-checkboxes";
 import YearField from "../year-field";
-import SelectType from "../select-type";
-import EmployeesField from "../employees-field";
-import RevenueField from "../revenue-field";
+//import SelectType from "../select-type";
+//import EmployeesField from "../employees-field";
+//import RevenueField from "../revenue-field";
 import SelectIndustry from "../select-industry";
-import NaicsField from "../naics-field";
+//import NaicsField from "../naics-field";
 import {
   container,
   input,
@@ -61,23 +61,23 @@ export default function CreateBusinessForm() {
           onClick={() => setDiffMailAddress(!diffMailAddress)}
         />
       </div>
-      <hr />
+      {/*       <hr />
       <PocFields label="CEO" />
       <PocFields label="Other POC" />
       <hr />
       <TinField />
       <hr />
-      <DisadvCheckboxes />
+      <DisadvCheckboxes /> */}
       <hr />
       <YearField />
-      <SelectType />
+      {/* <SelectType />
       <hr />
       <EmployeesField />
       <RevenueField />
-      <hr />
+      <hr /> */}
       <SelectIndustry />
       <hr />
-      <NaicsField />
+      {/*       <NaicsField /> */}
       <button type="submit" className={btn}>
         Create
       </button>

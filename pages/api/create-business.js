@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     ? body.address
     : [body.address, body.address];
 
-  class POC {
+  /*   class POC {
     constructor(name, phone, email) {
       this.name = name;
       this.phone = phone;
@@ -31,7 +31,7 @@ export default async function handler(req, res) {
     poc: [ceo.name, other.name],
     phone: [ceo.phone, other.phone],
     email: [ceo.email, other.email],
-  } = body);
+  } = body); */
 
   const results = await prisma.business.create({
     data: {
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
       },
       principalAddress: address,
       mailingAddress: mailAddress,
-      ceo: ceo.name || null,
+      /* ceo: ceo.name || null,
       ceoPhone: ceo.phone || null,
       ceoEmail: ceo.email || null,
       otherPoc: other.name || null,
@@ -49,15 +49,17 @@ export default async function handler(req, res) {
       tin: parseInt(body.tin) || null,
       womanOwned: "womanOwned" in body,
       veteranOwned: "veteranOwned" in body,
-      minorityCertified: "minorityCertified" in body,
+      minorityCertified: "minorityCertified" in body, */
       year: parseInt(body.year),
-      type: body.type || null,
+      /*       type: body.type || null,
       employees: parseInt(body.employees) || null,
-      revenue: parseInt(body.revenue) || null,
+      revenue: parseInt(body.revenue) || null, */
       industry: body.industry,
-      naicsCode: parseInt(body.naics) || null,
+      //naicsCode: parseInt(body.naics) || null,
     },
   });
 
-  res.redirect(302, "/success");
+  console.log(results.id);
+
+  res.redirect(302, `/success/${results.id}`);
 }
