@@ -45,7 +45,7 @@ export default function results({ businesses, digest }) {
         {businesses.map((biz, i) => (
           <li key={i}>
             <a
-              href={`/success/${biz.id}`}
+              href={`/business/${biz.id}`}
             >{`${biz.officialName.content}, est. ${biz.est}`}</a>
           </li>
         ))}

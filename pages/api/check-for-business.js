@@ -13,6 +13,6 @@ export default async function handler(req, res) {
   } else {
     const json = await JSON.stringify(req.body);
     const cypherText = await cipher(json);
-    res.redirect(`/results/${cypherText}`);
+    res.redirect(`/collisions/${cypherText}`);
   }
 }
