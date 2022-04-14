@@ -17,10 +17,10 @@ export async function getServerSideProps(context) {
 }
 
 export default function Success({ results, id }) {
-  console.dir(results);
   return (
     <Layout>
-      <h2>Business, ID #{id}: added to directory. &#x1F370;&#x1F389;</h2>
+      <h2>Business, ID #{id} &#x1F454;</h2>
+
       <BusinessTable body={results} />
     </Layout>
   );

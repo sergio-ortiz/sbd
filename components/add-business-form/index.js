@@ -13,7 +13,7 @@ export default function addBusinessForm({ cipherText }) {
         >
           Yes
         </button>
-        <Link href="/thankyou">
+        <Link href="/">
           <a>
             <button className={`${styles.btn} ${styles["no-btn"]}`}>No</button>
           </a>

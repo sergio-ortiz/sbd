@@ -8,10 +8,6 @@ const BusinessTable = ({ body }) => (
     </thead>
     <tbody>
       <tr>
-        <td>ID</td>
-        <td>{body.id}</td>
-      </tr>
-      <tr>
         <td>Names</td>
         <td>{body.names.map((n) => n.content).join(", ")}</td>
       </tr>
