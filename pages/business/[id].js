@@ -1,5 +1,4 @@
 import Layout from "../../components/layout";
-//import BusinessTable from "../../components/business-table";
 import UpdateBusinessForm from "../../components/update-business-form";
 
 export async function getServerSideProps(context) {
@@ -22,7 +21,6 @@ export default function Success({ results, id }) {
     <Layout>
       <h2>Business, ID #{id} &#x1F454;</h2>
 
-      {/* <BusinessTable body={results} /> */}
       <UpdateBusinessForm body={results} />
     </Layout>
   );
