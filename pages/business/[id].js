@@ -1,5 +1,6 @@
 import Layout from "../../components/layout";
-import BusinessTable from "../../components/business-table";
+//import BusinessTable from "../../components/business-table";
+import UpdateBusinessForm from "../../components/update-business-form";
 
 export async function getServerSideProps(context) {
   const results = await prisma.business.findUnique({
@@ -21,7 +22,8 @@ export default function Success({ results, id }) {
     <Layout>
       <h2>Business, ID #{id} &#x1F454;</h2>
 
-      <BusinessTable body={results} />
+      {/* <BusinessTable body={results} /> */}
+      <UpdateBusinessForm body={results} />
     </Layout>
   );
 }
