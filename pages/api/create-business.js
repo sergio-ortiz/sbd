@@ -23,9 +23,7 @@ export default async function handler(req, res) {
       },
       principalAddress: address,
       mailingAddress: mailAddress,
-
       year: parseInt(body.year),
-
       industry: body.industry,
     },
   });

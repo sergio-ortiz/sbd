@@ -20,7 +20,6 @@ export default function Success({ results, id }) {
   return (
     <Layout>
       <h2>Business, ID #{id} &#x1F454;</h2>
-
       <UpdateBusinessForm body={results} />
     </Layout>
   );

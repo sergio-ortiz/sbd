@@ -5,7 +5,7 @@
 //import TinField from "../tin-field";
 //import DisadvCheckboxes from "../disadv-checkboxes";
 import YearField from "../year-field";
-//import SelectType from "../select-type";
+import SelectType from "../select-type";
 //import EmployeesField from "../employees-field";
 //import RevenueField from "../revenue-field";
 import SelectIndustry from "../select-industry";
@@ -72,7 +72,8 @@ export default function UpdateBusinessForm({ body }) {
       <DisadvCheckboxes />
       <hr /> */}
       <YearField value={body.year} disabled={true} />
-      {/* <SelectType />
+      <SelectType value={`${body.type}`} disabled={true} />
+      {/* 
       <hr />
       <EmployeesField />
       <RevenueField />
