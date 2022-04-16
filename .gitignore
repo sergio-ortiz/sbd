@@ -5,3 +5,7 @@ node_modules
 /.next/
 
 docker-compose.yml
+
+update-business.js
+
+business-table

@@ -1,9 +1,15 @@
 import { input } from "./select-industry.module.css";
 
-const SelectIndustry = () => (
+const SelectIndustry = ({ value, disabled }) => (
   <>
     <label htmlFor="industry">Select Your Industry</label>
-    <select name="industry" className={input} required>
+    <select
+      name="industry"
+      className={input}
+      value={value}
+      disabled={disabled}
+      required
+    >
       <option value="">--Please choose an option--</option>
       <option value="Construction/Trade">Construction/Trade</option>
       <option value="Healthcare">Healthcare</option>

@@ -22,12 +22,14 @@ export async function getServerSideProps(context) {
         },
       },
       year: true,
+      id: true,
     },
   });
 
   const businesses = results.map((obj) => ({
     officialName: obj.names[0],
     est: obj.year,
+    id: obj.id,
   }));
 
   return {
@@ -36,13 +38,16 @@ export async function getServerSideProps(context) {
 }
 
 export default function results({ businesses, digest }) {
-  businesses.forEach((obj) => console.dir(obj));
   return (
     <Layout>
       <h2>Found existing businesses in directory &#x1F4C1;</h2>
       <ul>
         {businesses.map((biz, i) => (
-          <li key={i}>{`${biz.officialName.content}, est. ${biz.est}`}</li>
+          <li key={i}>
+            <a
+              href={`/business/${biz.id}`}
+            >{`${biz.officialName.content}, est. ${biz.est}`}</a>
+          </li>
         ))}
       </ul>
       <h2>Would you like to add it?</h2>
