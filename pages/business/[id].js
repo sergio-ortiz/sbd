@@ -1,3 +1,4 @@
+import prisma from "../../lib/prisma";
 import Layout from "../../components/layout";
 import UpdateBusinessForm from "../../components/update-business-form";
 

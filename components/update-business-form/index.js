@@ -9,7 +9,7 @@ import SelectType from "../select-type";
 //import EmployeesField from "../employees-field";
 //import RevenueField from "../revenue-field";
 import SelectIndustry from "../select-industry";
-//import NaicsField from "../naics-field";
+import NaicsField from "../naics-field";
 import {
   container,
   input,
@@ -79,9 +79,9 @@ export default function UpdateBusinessForm({ body }) {
       <RevenueField />
       <hr /> */}
       <SelectIndustry value={body.industry} disabled={true} />
-      {/* <hr />
-      <NaicsField />
-      <button type="submit" className={btn}>
+      <hr />
+      {/* <NaicsField value={`${body.naicsCode}`} diabled={true} /> */}
+      {/* <button type="submit" className={btn}>
         Create
       </button> */}
     </form>
