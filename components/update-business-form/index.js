@@ -1,7 +1,7 @@
 //import { useState } from "react";
 //import NameField from "../name-field";
 //import AddressFields from "../../components/address-fields";
-//import PocFields from "../poc-fields";
+import PocFields from "../poc-fields";
 import TinField from "../tin-field";
 import DisadvCheckboxes from "../disadv-checkboxes";
 import YearField from "../year-field";
@@ -62,12 +62,24 @@ export default function UpdateBusinessForm({ body }) {
           type="checkbox"
           onClick={() => setDiffMailAddress(!diffMailAddress)}
         />
-      </div>
+      </div> */}
       <hr />
-      <PocFields label="CEO" />
-      <PocFields label="Other POC" />
-      <hr /> */}
+      <PocFields
+        label="CEO"
+        poc={body.ceo}
+        phone={body.ceoPhone}
+        email={body.ceoEmail}
+        disabled={true}
+      />
+      <PocFields
+        label="Other POC"
+        poc={body.otherPoc}
+        phone={body.otherPocPhone}
+        email={body.otherPocEmail}
+        disabled={true}
+      />
       <TinField value={body.tin} disabled={true} />
+      <hr />
       <DisadvCheckboxes
         womanOwned={body.womanOwned}
         veteranOwned={body.veteranOwned}
