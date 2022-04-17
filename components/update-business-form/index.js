@@ -3,7 +3,7 @@
 //import AddressFields from "../../components/address-fields";
 //import PocFields from "../poc-fields";
 //import TinField from "../tin-field";
-//import DisadvCheckboxes from "../disadv-checkboxes";
+import DisadvCheckboxes from "../disadv-checkboxes";
 import YearField from "../year-field";
 import SelectType from "../select-type";
 import EmployeesField from "../employees-field";
@@ -67,10 +67,15 @@ export default function UpdateBusinessForm({ body }) {
       <PocFields label="CEO" />
       <PocFields label="Other POC" />
       <hr />
-      <TinField />
+      <TinField /> */}
       <hr />
-      <DisadvCheckboxes />
-      <hr /> */}
+      <DisadvCheckboxes
+        womanOwned={body.womanOwned}
+        veteranOwned={body.veteranOwned}
+        minorityCertified={body.minorityCertified}
+        disabled={true}
+      />
+      <hr />
       <YearField value={body.year} disabled={true} />
       <SelectType value={body.type} disabled={true} />
       <EmployeesField value={body.employees} disabled={true} />
