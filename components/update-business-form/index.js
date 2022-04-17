@@ -6,7 +6,7 @@
 //import DisadvCheckboxes from "../disadv-checkboxes";
 import YearField from "../year-field";
 import SelectType from "../select-type";
-//import EmployeesField from "../employees-field";
+import EmployeesField from "../employees-field";
 import RevenueField from "../revenue-field";
 import SelectIndustry from "../select-industry";
 import NaicsField from "../naics-field";
@@ -73,9 +73,7 @@ export default function UpdateBusinessForm({ body }) {
       <hr /> */}
       <YearField value={body.year} disabled={true} />
       <SelectType value={body.type} disabled={true} />
-      {/* 
-      <hr />
-      <EmployeesField /> */}
+      <EmployeesField value={body.employees} disabled={true} />
       <RevenueField value={body.revenue} disabled={true} />
       <SelectIndustry value={body.industry} disabled={true} />
       <NaicsField value={body.naicsCode} disabled={true} />
