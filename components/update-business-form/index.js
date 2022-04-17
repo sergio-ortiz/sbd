@@ -7,7 +7,7 @@
 import YearField from "../year-field";
 import SelectType from "../select-type";
 //import EmployeesField from "../employees-field";
-//import RevenueField from "../revenue-field";
+import RevenueField from "../revenue-field";
 import SelectIndustry from "../select-industry";
 import NaicsField from "../naics-field";
 import {
@@ -75,9 +75,8 @@ export default function UpdateBusinessForm({ body }) {
       <SelectType value={body.type} disabled={true} />
       {/* 
       <hr />
-      <EmployeesField />
-      <RevenueField />
-      <hr /> */}
+      <EmployeesField /> */}
+      <RevenueField value={body.revenue} disabled={true} />
       <SelectIndustry value={body.industry} disabled={true} />
       <NaicsField value={body.naicsCode} disabled={true} />
     </form>
