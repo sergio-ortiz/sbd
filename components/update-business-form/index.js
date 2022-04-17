@@ -72,18 +72,14 @@ export default function UpdateBusinessForm({ body }) {
       <DisadvCheckboxes />
       <hr /> */}
       <YearField value={body.year} disabled={true} />
-      <SelectType value={`${body.type}`} disabled={true} />
+      <SelectType value={body.type} disabled={true} />
       {/* 
       <hr />
       <EmployeesField />
       <RevenueField />
       <hr /> */}
       <SelectIndustry value={body.industry} disabled={true} />
-      <hr />
-      {/* <NaicsField value={`${body.naicsCode}`} diabled={true} /> */}
-      {/* <button type="submit" className={btn}>
-        Create
-      </button> */}
+      <NaicsField value={body.naicsCode} disabled={true} />
     </form>
   );
 }
