@@ -1,13 +1,15 @@
 import { input } from "./tin-field.module.css";
 
-const TinField = () => (
+const TinField = ({ value, disabled }) => (
   <>
     <label htmlFor="tin">TIN#</label>
     <input
       type="number"
       name="tin"
       className={input}
+      value={value ? value : ""}
       placeholder="Tax ID Number"
+      disabled={disabled}
     />
   </>
 );
