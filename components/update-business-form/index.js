@@ -1,6 +1,6 @@
 //import { useState } from "react";
 //import NameField from "../name-field";
-//import AddressFields from "../../components/address-fields";
+import AddressFields from "../../components/address-fields";
 import PocFields from "../poc-fields";
 import TinField from "../tin-field";
 import DisadvCheckboxes from "../disadv-checkboxes";
@@ -49,10 +49,14 @@ export default function UpdateBusinessForm({ body }) {
         <button onClick={addNameField} className={add}>
           Add
         </button>
-      </div>
+      </div> */}
 
-      <AddressFields />
-      {diffMailAddress ? <AddressFields /> : ""}
+      <AddressFields address={body.principalAddress} disabled={true} />
+      {body.principalAddress !== body.mailingAddress ? (
+        <AddressFields address={body.mailingAddress} disabled={true} />
+      ) : (
+        ""
+      )}
       <div className={row}>
         <label htmlFor="diffAddressCheckbox">
           Use Different Mailing Address?
@@ -60,9 +64,11 @@ export default function UpdateBusinessForm({ body }) {
         <input
           id="diffAddressCheckbox"
           type="checkbox"
-          onClick={() => setDiffMailAddress(!diffMailAddress)}
+          // onClick={() => setDiffMailAddress(!diffMailAddress)}
+          checked={body.principalAddress !== body.mailingAddress}
+          disabled
         />
-      </div> */}
+      </div>
       <hr />
       <PocFields
         label="CEO"
