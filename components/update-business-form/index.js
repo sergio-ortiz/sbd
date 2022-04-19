@@ -1,5 +1,5 @@
-//import { useState } from "react";
-//import NameField from "../name-field";
+import { useState } from "react";
+import NameField from "../name-field";
 import AddressFields from "../../components/address-fields";
 import PocFields from "../poc-fields";
 import TinField from "../tin-field";
@@ -19,12 +19,14 @@ import {
 } from "./create-business-form.module.css";
 
 export default function UpdateBusinessForm({ body }) {
-  /* const [nameCount, setNameCount] = useState(0);
-  const [diffMailAddress, setDiffMailAddress] = useState(false);
+  const [nameCount, setNameCount] = useState(
+    body.names ? body.names.length - 1 : 0
+  );
+  // const [diffMailAddress, setDiffMailAddress] = useState(false);
 
   const altNameFields = Array(nameCount).fill();
 
-  const addNameField = (e) => {
+  /* const addNameField = (e) => {
     e.preventDefault();
     setNameCount(nameCount + 1);
   };
@@ -41,10 +43,10 @@ export default function UpdateBusinessForm({ body }) {
         required
         disabled
       />
-      {/* {altNameFields.map((e, i) => (
-        <NameField key={i} />
+      {altNameFields.map((e, i) => (
+        <NameField key={i} value={body.names[i + 1].content} disabled={true} />
       ))}
-      <div className={row}>
+      {/* <div className={row}>
         <span>Alternate Names?</span>
         <button onClick={addNameField} className={add}>
           Add
