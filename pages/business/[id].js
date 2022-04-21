@@ -1,7 +1,6 @@
 import prisma from "../../lib/prisma";
 import Layout from "../../components/layout";
-import UpdateBusinessForm from "../../components/update-business-form";
-import BusinessTable from "/business-table";
+import AddInfoForm from "../../components/add-info-form";
 
 export async function getServerSideProps(context) {
   const results = await prisma.business.findUnique({
@@ -27,10 +26,11 @@ export default function Success({ results, id }) {
       <h4>Official Business Name:</h4>
       <p>{results.names[0].content}</p>
       <h4>Altenative Names</h4>
+
       {(() => {
         if (results.names.length > 1) {
           const altNames = results.names.slice(1);
-          return altNames.map((n) => <p>{n.content}</p>);
+          return altNames.map((n) => <p key={n.id}>{n.content}</p>);
         }
       })()}
 
@@ -43,7 +43,9 @@ export default function Success({ results, id }) {
       <p>{results.year}</p>
       <h4>Industry</h4>
       <p>{results.industry}</p>
-      {/* <UpdateBusinessForm body={results} /> */}
+
+      <h3>Additional voluntary information</h3>
+      <AddInfoForm body={results} />
     </Layout>
   );
 }
