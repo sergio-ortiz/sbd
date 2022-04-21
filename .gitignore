@@ -6,6 +6,5 @@ node_modules
 
 docker-compose.yml
 
-update-business.js
-
 business-table
+update-business-form

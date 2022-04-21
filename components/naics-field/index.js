@@ -9,7 +9,7 @@ const NaicsField = ({ value, disabled }) => (
       className={input}
       min="100000"
       max="999999"
-      value={value}
+      defaultValue={value ? value : ""}
       placeholder="NAICS Code"
       disabled={disabled}
     />
