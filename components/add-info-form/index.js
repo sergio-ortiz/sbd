@@ -17,34 +17,44 @@ import {
 const AddInfoForm = ({ body }) => {
   const [disabled, setDisabled] = useState(true);
 
-  const toggleEdit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setDisabled(!disabled);
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
     const [ceo, otherPoc] = e.target.poc;
     const [ceoPhone, otherPocPhone] = e.target.phone;
     const [ceoEmail, otherPocEmail] = e.target.email;
+
     const data = {
-      ceo: ceo.value,
-      ceoPhone: ceoPhone.value,
-      ceoEmail: ceoEmail.value,
-      otherPoc: otherPoc.value,
-      otherPocPhone: otherPocPhone.value,
-      otherPocEmail: otherPocEmail.value,
-      tin: e.target.tin.value,
+      ceo: ceo.value || null,
+      ceoPhone: ceoPhone.value || null,
+      ceoEmail: ceoEmail.value || null,
+      otherPoc: otherPoc.value || null,
+      otherPocPhone: otherPocPhone.value || null,
+      otherPocEmail: otherPocEmail.value || null,
+      tin: parseInt(e.target.tin.value),
       womanOwned: e.target.womanOwned.checked,
       veteranOwned: e.target.veteranOwned.checked,
       minorityCertified: e.target.minorityCertified.checked,
-      employees: e.target.employees.value,
-      type: e.target.type.value,
-      revenue: e.target.revenue.value,
-      naicsCode: e.target.naics.value,
+      employees: parseInt(e.target.employees.value),
+      type: e.target.type.value || null,
+      revenue: parseInt(e.target.revenue.value),
+      naicsCode: parseInt(e.target.naics.value),
     };
 
-    console.log(data);
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: body.id, data }),
+    };
+
+    const response = await fetch("/api/update-business", options);
+    const result = await response.json();
+
+    console.log(result);
+
+    setDisabled(true);
   };
 
   return (
@@ -77,7 +87,13 @@ const AddInfoForm = ({ body }) => {
       <RevenueField value={body.revenue} disabled={disabled} />
       <NaicsField value={body.naicsCode} disabled={disabled} />
       {disabled ? (
-        <button onClick={toggleEdit} className={btn}>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setDisabled(false);
+          }}
+          className={btn}
+        >
           Edit
         </button>
       ) : (
