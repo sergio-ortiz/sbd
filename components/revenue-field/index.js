@@ -7,7 +7,7 @@ const RevenueField = ({ value, disabled }) => (
       type="number"
       name="revenue"
       className={input}
-      value={value ? value : ""}
+      defaultValue={value ? value : ""}
       disabled={disabled}
       placeholder="Revenue"
     />

@@ -7,7 +7,7 @@ const EmployeesField = ({ value, disabled }) => (
       type="number"
       name="employees"
       className={input}
-      value={value ? value : ""}
+      defaultValue={value ? value : ""}
       placeholder="Employees"
       disabled={disabled}
     />

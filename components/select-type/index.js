@@ -6,7 +6,7 @@ const SelectType = ({ value, disabled }) => (
     <select
       name="type"
       className={input}
-      value={value ? value : ""}
+      defaultValue={value ? value : ""}
       disabled={disabled}
     >
       <option value="C corp">Corporation &quot;C corp&quot;</option>

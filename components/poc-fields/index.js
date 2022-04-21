@@ -7,7 +7,7 @@ const PocFields = ({ label, poc, phone, email, disabled }) => (
       type="text"
       name="poc"
       className={input}
-      value={poc ? poc : ""}
+      defaultValue={poc ? poc : ""}
       placeholder="Name"
       disabled={disabled}
     />
@@ -15,7 +15,7 @@ const PocFields = ({ label, poc, phone, email, disabled }) => (
       type="tel"
       name="phone"
       className={input}
-      value={phone ? phone : ""}
+      defaultValue={phone ? phone : ""}
       placeholder="Phone"
       disabled={disabled}
     />
@@ -23,7 +23,7 @@ const PocFields = ({ label, poc, phone, email, disabled }) => (
       type="email"
       name="email"
       className={input}
-      value={email ? email : ""}
+      defaultValue={email ? email : ""}
       placeholder="Email"
       disabled={disabled}
     />

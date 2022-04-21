@@ -7,7 +7,7 @@ const TinField = ({ value, disabled }) => (
       type="number"
       name="tin"
       className={input}
-      value={value ? value : ""}
+      defaultValue={value ? value : ""}
       placeholder="Tax ID Number"
       disabled={disabled}
     />
