@@ -5,6 +5,3 @@ node_modules
 /.next/
 
 docker-compose.yml
-
-business-table
-update-business-form

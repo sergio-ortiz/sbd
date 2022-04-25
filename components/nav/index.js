@@ -1,7 +1,13 @@
+import { useState } from "react";
 import Link from "next/link";
+import MobileMenu from "../mobile-menu";
 import styles from "./nav.module.css";
 
 export default function Nav() {
+  const [mobile, setMobile] = useState(false);
+
+  const toggleMenu = () => setMobile(!mobile);
+
   return (
     <div className={styles.navbar}>
       <nav className={styles["flex-container"]}>
@@ -22,6 +28,12 @@ export default function Nav() {
             </Link>
           </li>
         </ul>
+        {mobile ? <MobileMenu toggleMenu={toggleMenu} /> : null}
+        <button className={styles.hamburger} onClick={toggleMenu}>
+          <div className={styles.bar}></div>
+          <div className={styles.bar}></div>
+          <div className={styles.bar}></div>
+        </button>
       </nav>
     </div>
   );

@@ -1,0 +1,17 @@
+.flexContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  color: white;
+  background: green;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 0.33rem;
+  width: 100px;
+  cursor: pointer;
+}
+

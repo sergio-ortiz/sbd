@@ -9,7 +9,7 @@
 .flex-container {
   height: 3rem;
   max-width: 1080px;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
   padding: 0;
   display: flex;
@@ -35,4 +35,29 @@
 .nav-link-text {
   color: white;
   text-decoration: none;
+}
+
+.hamburger {
+  background: none;
+  padding: 0;
+  border: none;
+  display: none;
+}
+
+.bar {
+  background: white;
+  height: 3px;
+  width: 24px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
