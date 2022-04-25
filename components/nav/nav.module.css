@@ -36,3 +36,28 @@
   color: white;
   text-decoration: none;
 }
+
+.hamburger {
+  background: none;
+  padding: 0;
+  border: none;
+  display: none;
+}
+
+.bar {
+  background: white;
+  height: 3px;
+  width: 24px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}

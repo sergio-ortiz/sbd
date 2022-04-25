@@ -1,0 +1,21 @@
+.navLinks {
+  position: absolute;
+  background: #333;
+  width: 70%;
+  right: 0;
+  list-style: none;
+  top: 30px;
+  height: 100vh;
+  text-align: end;
+}
+
+.navLinkItem {
+  margin: 1.66rem;
+  padding-right: 0.33rem;
+}
+
+.navLinkText {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
