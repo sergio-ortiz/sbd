@@ -1,3 +1,8 @@
+.flexContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .btn {
   color: white;
   background: green;
