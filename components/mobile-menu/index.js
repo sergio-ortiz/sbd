@@ -1,8 +1,13 @@
 import Link from "next/link";
-import { navLinks, navLinkItem, navLinkText } from "./mobile-menu.module.css";
+import {
+  navLinks,
+  show,
+  navLinkItem,
+  navLinkText,
+} from "./mobile-menu.module.css";
 
-const MobileMenu = ({ toggleMenu }) => (
-  <ul className={navLinks}>
+const MobileMenu = ({ toggleMenu, mobile }) => (
+  <ul className={mobile ? `${navLinks} ${show}` : navLinks}>
     <li className={navLinkItem}>
       <Link href="/">
         <a className={navLinkText} onClick={toggleMenu}>

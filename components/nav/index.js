@@ -28,12 +28,12 @@ export default function Nav() {
             </Link>
           </li>
         </ul>
-        {mobile ? <MobileMenu toggleMenu={toggleMenu} /> : null}
         <button className={styles.hamburger} onClick={toggleMenu}>
           <div className={styles.bar}></div>
           <div className={styles.bar}></div>
           <div className={styles.bar}></div>
         </button>
+        <MobileMenu toggleMenu={toggleMenu} mobile={mobile} />
       </nav>
     </div>
   );
