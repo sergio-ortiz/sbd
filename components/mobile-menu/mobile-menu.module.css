@@ -1,12 +1,18 @@
 .navLinks {
   position: absolute;
   background: #333;
-  width: 70%;
+  width: 60vw;
   right: 0;
   list-style: none;
   top: 30px;
   height: 100vh;
   text-align: end;
+  transition: .3s;
+  transform: translate3d(70vw, 0, 0);
+}
+
+.show {
+  transform: translate3d(0vw, 0, 0);
 }
 
 .navLinkItem {
