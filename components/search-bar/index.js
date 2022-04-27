@@ -6,7 +6,7 @@ const SearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    router.push(`/results/${e.target.search.value}`);
+    router.push(`/collisions/${e.target.search.value}`);
   };
 
   return (
