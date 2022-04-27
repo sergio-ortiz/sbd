@@ -3,17 +3,17 @@ import prisma from "../../lib/prisma";
 import Layout from "../../components/layout";
 import AddBusinessForm from "../../components/add-business-form";
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params: { slug } }) {
   const slugIsJSON = (() => {
     try {
-      JSON.parse(params.slug);
+      JSON.parse(slug);
       return true;
     } catch {
       return false;
     }
   })();
 
-  const parsed = slugIsJSON ? JSON.parse(params.slug) : { name: params.slug };
+  const parsed = slugIsJSON ? JSON.parse(slug) : { name: slug };
 
   const results = await prisma.business.findMany({
     where: {
@@ -34,12 +34,12 @@ export async function getServerSideProps({ params }) {
     },
   });
 
-  const props = slugIsJSON ? { results, digest: params.slug } : { results };
+  const props = slugIsJSON ? { results, slug } : { results };
 
   return { props };
 }
 
-const results = ({ results, digest }) => {
+const results = ({ results, slug }) => {
   return (
     <Layout>
       <h2>Found matching businesses in directory &#x1F4C1;</h2>
@@ -52,8 +52,14 @@ const results = ({ results, digest }) => {
           </li>
         ))}
       </ul>
-      <h2>Would you like to add it?</h2>
-      <AddBusinessForm json={digest} />
+      {slug ? (
+        <>
+          <h2>Would you like to add it?</h2>
+          <AddBusinessForm json={slug} />
+        </>
+      ) : (
+        ""
+      )}
     </Layout>
   );
 };
