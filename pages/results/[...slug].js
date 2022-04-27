@@ -1,15 +1,13 @@
 import Link from "next/link";
 import prisma from "../../lib/prisma";
 import Layout from "../../components/layout";
-import AddBusinessForm from "../../components/add-business-form";
 
 export async function getServerSideProps({ params }) {
-  const parsed = JSON.parse(params.digest);
   const results = await prisma.business.findMany({
     where: {
       names: {
         some: {
-          content: { in: parsed.name },
+          content: { in: params.slug },
         },
       },
     },
@@ -24,10 +22,10 @@ export async function getServerSideProps({ params }) {
     },
   });
 
-  return { props: { results, digest: params.digest } };
+  return { props: { results } };
 }
 
-const results = ({ results, digest }) => {
+const results = ({ results }) => {
   return (
     <Layout>
       <h2>Found matching businesses in directory &#x1F4C1;</h2>
@@ -40,8 +38,6 @@ const results = ({ results, digest }) => {
           </li>
         ))}
       </ul>
-      <h2>Would you like to add it?</h2>
-      <AddBusinessForm json={digest} />
     </Layout>
   );
 };
