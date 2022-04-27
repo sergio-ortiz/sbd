@@ -4,7 +4,17 @@ import Layout from "../../components/layout";
 import AddBusinessForm from "../../components/add-business-form";
 
 export async function getServerSideProps({ params }) {
-  const parsed = JSON.parse(params.slug);
+  const slugIsJSON = (() => {
+    try {
+      JSON.parse(params.slug);
+      return true;
+    } catch {
+      return false;
+    }
+  })();
+
+  const parsed = slugIsJSON ? JSON.parse(params.slug) : { name: params.slug };
+
   const results = await prisma.business.findMany({
     where: {
       names: {
@@ -24,7 +34,9 @@ export async function getServerSideProps({ params }) {
     },
   });
 
-  return { props: { results, digest: params.slug } };
+  const props = slugIsJSON ? { results, digest: params.slug } : { results };
+
+  return { props };
 }
 
 const results = ({ results, digest }) => {

@@ -3,11 +3,22 @@ import prisma from "../../lib/prisma";
 import Layout from "../../components/layout";
 
 export async function getServerSideProps({ params }) {
+  const slugIsJSON = (() => {
+    try {
+      JSON.parse(params.slug);
+      return true;
+    } catch {
+      return false;
+    }
+  })();
+
+  const parsed = slugIsJSON ? JSON.parse(params.slug) : { name: params.slug };
+
   const results = await prisma.business.findMany({
     where: {
       names: {
         some: {
-          content: { in: params.slug },
+          content: { in: parsed.name },
         },
       },
     },
@@ -22,7 +33,9 @@ export async function getServerSideProps({ params }) {
     },
   });
 
-  return { props: { results } };
+  const props = slugIsJSON ? { results, digest: params.slug } : { results };
+
+  return { props };
 }
 
 const results = ({ results }) => {
