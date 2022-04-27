@@ -1,10 +1,7 @@
-import decipher from "../../utils/decipher";
 import prisma from "../../lib/prisma";
 
 export default async function handler(req, res) {
-  const body = req.body.cipherText
-    ? await JSON.parse(decipher(req.body.cipherText))
-    : req.body;
+  const body = req.body.json ? await JSON.parse(req.body.json) : req.body;
 
   const names = Array.isArray(body.name)
     ? body.name.map((n, i) =>

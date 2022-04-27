@@ -1,5 +1,4 @@
 import prisma from "../../lib/prisma";
-import cipher from "../../utils/cipher";
 
 export default async function handler(req, res) {
   const results = await prisma.name.findMany({
@@ -12,7 +11,6 @@ export default async function handler(req, res) {
     res.redirect("/api/create-business");
   } else {
     const json = await JSON.stringify(req.body);
-    const cypherText = await cipher(json);
-    res.redirect(`/collisions/${cypherText}`);
+    res.redirect(`/collisions/${json}`);
   }
 }

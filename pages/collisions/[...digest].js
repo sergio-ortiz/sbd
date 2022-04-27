@@ -1,12 +1,10 @@
-import decipher from "../../utils/decipher";
+import Link from "next/link";
 import prisma from "../../lib/prisma";
 import Layout from "../../components/layout";
 import AddBusinessForm from "../../components/add-business-form";
 
-export async function getServerSideProps(context) {
-  const digest = context.query.digest.join("/");
-  const json = decipher(digest);
-  const parsed = JSON.parse(json);
+export async function getServerSideProps({ params }) {
+  const parsed = JSON.parse(params.digest);
   const results = await prisma.business.findMany({
     where: {
       names: {
@@ -26,32 +24,26 @@ export async function getServerSideProps(context) {
     },
   });
 
-  const businesses = results.map((obj) => ({
-    officialName: obj.names[0],
-    est: obj.year,
-    id: obj.id,
-  }));
-
-  return {
-    props: { businesses, digest },
-  };
+  return { props: { results, digest: params.digest } };
 }
 
-export default function results({ businesses, digest }) {
+const results = ({ results, digest }) => {
   return (
     <Layout>
-      <h2>Found existing businesses in directory &#x1F4C1;</h2>
+      <h2>Found matching businesses in directory &#x1F4C1;</h2>
       <ul>
-        {businesses.map((biz, i) => (
-          <li key={i}>
-            <a
-              href={`/business/${biz.id}`}
-            >{`${biz.officialName.content}, est. ${biz.est}`}</a>
+        {results.map(({ id, names, year }) => (
+          <li key={id}>
+            <Link href={`/business/${id}`}>
+              <a>{`${names[0].content}, est. ${year}`}</a>
+            </Link>
           </li>
         ))}
       </ul>
       <h2>Would you like to add it?</h2>
-      <AddBusinessForm cipherText={digest} />
+      <AddBusinessForm json={digest} />
     </Layout>
   );
-}
+};
+
+export default results;

@@ -28,7 +28,7 @@ export async function getServerSideProps({ params }) {
 const results = ({ results }) => {
   return (
     <Layout>
-      <h2>Matched businesses in directory &#x1F4C1;</h2>
+      <h2>Found matching businesses in directory &#x1F4C1;</h2>
       <ul>
         {results.map(({ id, names, year }) => (
           <li key={id}>
