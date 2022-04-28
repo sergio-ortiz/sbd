@@ -1,6 +1,6 @@
-import Link from "next/link";
 import prisma from "../../lib/prisma";
 import Layout from "../../components/layout";
+import Results from "../../components/results";
 import AddBusinessForm from "../../components/add-business-form";
 
 export async function getServerSideProps({ params: { slug } }) {
@@ -42,24 +42,8 @@ export async function getServerSideProps({ params: { slug } }) {
 const results = ({ results, slug }) => {
   return (
     <Layout>
-      <h2>Found matching businesses in directory &#x1F4C1;</h2>
-      <ul>
-        {results.map(({ id, names, year }) => (
-          <li key={id}>
-            <Link href={`/business/${id}`}>
-              <a>{`${names[0].content}, est. ${year}`}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-      {slug ? (
-        <>
-          <h2>Would you like to add it?</h2>
-          <AddBusinessForm json={slug} />
-        </>
-      ) : (
-        ""
-      )}
+      <Results results={results} />
+      {slug ? <AddBusinessForm json={slug} /> : ""}
     </Layout>
   );
 };
