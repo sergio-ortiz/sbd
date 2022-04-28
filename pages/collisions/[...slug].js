@@ -39,7 +39,7 @@ export async function getServerSideProps({ params: { slug } }) {
   return { props };
 }
 
-const results = ({ results, slug }) => {
+const CollisionsPage = ({ results, slug }) => {
   return (
     <Layout>
       <Results results={results} />
@@ -48,4 +48,4 @@ const results = ({ results, slug }) => {
   );
 };
 
-export default results;
+export default CollisionsPage;
