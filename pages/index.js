@@ -7,6 +7,7 @@ export default function Home() {
     <Layout>
       <h2>Welcome Home &#x1F3E0;</h2>
       <CreateButton />
+      <br />
       <SearchBar />
     </Layout>
   );

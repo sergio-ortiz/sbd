@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
+import CreateButton from "../create-button";
+import SearchBar from "../search-bar";
 import MobileMenu from "../mobile-menu";
 import styles from "./nav.module.css";
 
@@ -19,13 +21,14 @@ export default function Nav() {
         <ul className={styles["nav-links"]}>
           <li className={styles["nav-link-item"]}>
             <Link href="/">
-              <a className={styles["nav-link-text"]}>Home</a>
+              <a className={styles["nav-link-text"]}>Home &#x1F3E0;</a>
             </Link>
           </li>
           <li className={styles["nav-link-item"]}>
-            <Link href="/create-business">
-              <a className={styles["nav-link-text"]}>Create</a>
-            </Link>
+            <CreateButton />
+          </li>
+          <li className={styles["nav-link-item"]}>
+            <SearchBar />
           </li>
         </ul>
         <button className={styles.hamburger} onClick={toggleMenu}>

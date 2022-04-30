@@ -1,14 +1,17 @@
 .navLinks {
   position: absolute;
   background: #333;
-  width: 60vw;
+  width: 67vw;
   right: 0;
   list-style: none;
   top: 30px;
   height: 100vh;
   text-align: end;
   transition: .3s;
-  transform: translate3d(70vw, 0, 0);
+  transform: translate3d(75vw, 0, 0);
+  display: flex;
+  flex-direction: column;
+  padding: 0.33rem 1rem;
 }
 
 .show {
@@ -17,11 +20,11 @@
 
 .navLinkItem {
   margin: 1.66rem;
-  padding-right: 0.33rem;
 }
 
 .navLinkText {
+  font-weight: bold;
   color: white;
-  font-size: 22px;
+  font-size: 24px;
   text-decoration: none;
 }

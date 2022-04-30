@@ -26,6 +26,7 @@
 .nav-links {
   list-style: none;
   display: flex;
+  align-items: center;
 }
 
 .nav-link-item {
@@ -34,6 +35,8 @@
 
 .nav-link-text {
   color: white;
+  font-size: 24px;
+  font-weight: bold;
   text-decoration: none;
 }
 
