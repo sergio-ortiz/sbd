@@ -1,4 +1,6 @@
 import Link from "next/link";
+import CreateButton from "../create-button";
+import SearchBar from "../search-bar";
 import {
   navLinks,
   show,
@@ -11,17 +13,13 @@ const MobileMenu = ({ toggleMenu, mobile }) => (
     <li className={navLinkItem}>
       <Link href="/">
         <a className={navLinkText} onClick={toggleMenu}>
-          Home
+          Home &#x1F3E0;
         </a>
       </Link>
     </li>
-    <li className={navLinkItem}>
-      <Link href="/create-business">
-        <a className={navLinkText} onClick={toggleMenu}>
-          Create
-        </a>
-      </Link>
-    </li>
+    <CreateButton />
+    <br />
+    <SearchBar />
   </ul>
 );
 
