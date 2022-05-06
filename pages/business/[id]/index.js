@@ -1,6 +1,6 @@
-import prisma from "../../lib/prisma";
-import Layout from "../../components/layout";
-import AddInfoForm from "../../components/add-info-form";
+import prisma from "../../../lib/prisma";
+import Layout from "../../../components/layout";
+import LinkItem from "../../../components/link-item";
 
 export async function getServerSideProps(context) {
   const results = await prisma.business.findUnique({
@@ -44,8 +44,10 @@ export default function Success({ results, id }) {
       <h4>Industry</h4>
       <p>{results.industry}</p>
 
-      <h3>Additional voluntary information</h3>
-      <AddInfoForm body={results} />
+      <ul>
+        <LinkItem href={`/business/${id}/misc`} text={"Miscellaneous Info"} />
+      </ul>
+      <br />
     </Layout>
   );
 }
