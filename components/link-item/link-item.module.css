@@ -1,0 +1,13 @@
+.listItem {
+  list-style: none;
+  margin-left: -2.66rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 7px;
+}
+
+.anchorText {
+  text-decoration: none;
+  color: black;
+}

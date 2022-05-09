@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { listItem, anchorText } from "./link-item.module.css";
+
 const LinkItem = ({ href, text }) => (
-  <li>
+  <li className={listItem}>
     <Link href={href}>
-      <a>{text}</a>
+      <a className={anchorText}>{text}</a>
     </Link>
   </li>
 );
